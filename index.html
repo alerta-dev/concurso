@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Concurso 1v1 - Listado de Participantes</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: "Courier New", Courier, monospace;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    ul {
+      padding: 0;
+    }
+    .participant {
+      list-style: none;
+      margin: 15px 0;
+      padding: 10px;
+      border: 1px solid white;
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .profile-photo {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    .details {
+      flex-grow: 1;
+      position: relative;
+    }
+    .details > div {
+      margin: 3px 0;
+    }
+    .score,
+    .opponent {
+      font-size: 0.9em;
+    }
+    .toggle {
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 5px;
+      color: #0f0;
+      font-size: 1.2em;
+    }
+    .info-text {
+      display: none;
+      background-color: #333;
+      padding: 8px;
+      margin-top: 8px;
+      border: 1px solid white;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <h1>Concurso 1v1 - Listado de Participantes</h1>
+  <ul id="participantList">
+    <li class="participant">
+      <img src="profile1.jpg" alt="Foto de perfil de Juan" class="profile-photo">
+      <div class="details">
+        <div><strong>Juan</strong></div>
+        <div class="score">Puntuación: 1500</div>
+        <div class="opponent">Contrincante: Pedro</div>
+        <div class="toggle" onclick="toggleInfo(this)">▼</div>
+        <div class="info-text">
+          Juan obtuvo 1500 puntos por su excelente desempeño en el último torneo, demostrando gran habilidad y estrategia.
+        </div>
+      </div>
+    </li>
+    <li class="participant">
+      <img src="profile2.jpg" alt="Foto de perfil de María" class="profile-photo">
+      <div class="details">
+        <div><strong>María</strong></div>
+        <div class="score">Puntuación: 1400</div>
+        <div class="opponent">Contrincante: Luis</div>
+        <div class="toggle" onclick="toggleInfo(this)">▼</div>
+        <div class="info-text">
+          María consiguió 1400 puntos gracias a su constancia y precisión en las rondas previas.
+        </div>
+      </div>
+    </li>
+    <!-- Agrega más participantes según sea necesario -->
+  </ul>
+
+  <script>
+    function toggleInfo(element) {
+      var infoText = element.nextElementSibling;
+      infoText.style.display = (infoText.style.display === "block") ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
